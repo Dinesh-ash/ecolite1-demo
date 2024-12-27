@@ -9,6 +9,21 @@ const parcelRoute = require("./routes/parcel")
 dotenv.config();
 const app = express();
 
+//CORS
+//const cors = require("cors");
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:8000", // Local development frontend
+      "https://your-backend-url.onrender.com", // Deployed frontend
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
+
 //MIDDLEWARES
 app.use(cors());
 app.use(express.json());
