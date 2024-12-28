@@ -15,7 +15,7 @@ const app = express();
 app.use(
   cors({
     origin: [ // Local development frontend
-      "https://your-backend-url.onrender.com", // Deployed frontend
+      "https://backend-repo-wndn.onrender.com", // Deployed frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
