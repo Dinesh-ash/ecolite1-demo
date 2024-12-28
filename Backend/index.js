@@ -14,8 +14,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:8000", // Local development frontend
+    origin: [ // Local development frontend
       "https://your-backend-url.onrender.com", // Deployed frontend
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
