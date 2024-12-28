@@ -44,7 +44,7 @@ const CreateParcel = () => {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:8000/api/v1/parcels", {
+      await axios.post("https://backend-repo-wndn.onrender.com/api/v1/parcels", {
         sendername: senderName,       // Ensure field name is "sendername"
       recipientname: recipientName, // Ensure field name is "recipientname"
       senderemail: senderEmail,
