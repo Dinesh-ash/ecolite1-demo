@@ -19,7 +19,7 @@ export const register = async (dispatch, user) => {
   dispatch(registerStart());
   try {
     console.log("Sending registration request:", user);
-    const res = await axios.post("http://localhost:8000/api/v1/users", user); // Correct endpoint
+    const res = await axios.post("https://backend-repo-wndn.onrender.com/api/v1/users", user); // Correct endpoint
     console.log("Registration response:", res.data);
     dispatch(registerSuccess(res.data));
   } catch (err) {

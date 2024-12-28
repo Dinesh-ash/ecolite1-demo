@@ -35,7 +35,7 @@ const Registration = () => {
     }
   
     try {
-      const res = await axios.post("http://localhost:8000/api/v1/users", formData);
+      const res = await axios.post("https://backend-repo-wndn.onrender.com/api/v1/users", formData);
       alert("Registration Successful!");
       setFormData({
         fullname: "",
