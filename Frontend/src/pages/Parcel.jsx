@@ -42,49 +42,56 @@ const Parcel = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center mt-[3%] mr-[5%] ml-[5%]">
-      <div className="bg-[#D9D9D9] h-[80vh] w-[60vw] rounded-md">
+    <div className="flex flex-col items-center justify-center min-h-screen" style={{ backgroundColor: "#121212", color: "#D9D9D9" }}>
+      <div
+        className="h-auto w-[60vw] rounded-md p-5"
+        style={{
+          backgroundColor: "#333", // Darker background
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Subtle shadow for depth
+          borderRadius: "10px",
+        }}
+      >
         <Link to="/myparcels">
-          <FaArrowLeft className="text-[18px] m-2 cursor-pointer" />
+          <FaArrowLeft className="text-[#cfb526] text-[18px] cursor-pointer mb-4" />
         </Link>
+  
+        <h2 className="text-center text-[20px] font-semibold mb-4">Parcel Details</h2>
+  
         <div className="flex justify-between">
+          {/* Left Section */}
           <div className="flex-1">
-            <ul className="m-3">
-              <li className="mt-3">From: {parcel?.from || "N/A"}</li>
-              <li className="mt-3">Weight: {parcel?.weight || 0} kg</li>
-              <li className="mt-3">Date: {parcel?.date || "N/A"}</li>
-              <li className="mt-3">Sender: {parcel?.sendername || "N/A"}</li>
-              <li className="mt-3">To: {parcel?.to || "N/A"}</li>
-              {/* <li className="mt-3">Cost: ${parcel?.cost || 0}</li> */}
-              <li className="mt-3"> Receiver: {parcel?.recipientname || "N/A"} </li>
-              <li className="mt-3">Track ID: {parcel?._id || "N/A"}</li>
-              <li className="mt-3">Note: {parcel?.note || "No notes"}</li>
+            <ul className="space-y-3">
+              <li><strong>From:</strong> {parcel?.from || "N/A"}</li>
+              <li><strong>Weight:</strong> {parcel?.weight || 0} kg</li>
+              <li><strong>Date:</strong> {parcel?.date || "N/A"}</li>
+              <li><strong>Sender:</strong> {parcel?.sendername || "N/A"}</li>
+              <li><strong>To:</strong> {parcel?.to || "N/A"}</li>
+              <li><strong>Receiver:</strong> {parcel?.recipientname || "N/A"}</li>
+              <li><strong>Track ID:</strong> {parcel?._id || "N/A"}</li>
+              <li><strong>Note:</strong> {parcel?.note || "No notes"}</li>
             </ul>
-            <button
-              className={
-                parcel?.status === 1
-                  ? "bg-[#555] text-white w-[100px] cursor-pointer padding-[10px] m-[20px]"
-                  : "bg-[#45de52] text-white w-[100px] cursor-pointer padding-[10px] m-[20px]"
-              }
-            >
-              {parcel?.status === 1 ? "Pending" : "Delivered"}
-            </button>
-            {/* Track Button */}
-            <Link to={`/track/${parcel?._id}`}>
-              <button className="mt-2 bg-[#cfb526] text-white px-4 py-2 rounded-md">
-                Track
+            <div className="mt-4 space-x-4">
+              <button
+                className={`w-[120px] py-2 rounded-md text-white ${
+                  parcel?.status === 1 ? "bg-[#cfb526]" : "bg-[#45de52]"
+                }`}
+              >
+                {parcel?.status === 1 ? "Pending" : "Delivered"}
               </button>
-            </Link>
+              <Link to={`/track/${parcel?._id}`}>
+                <button className="bg-[#cfb526] text-white px-4 py-2 rounded-md hover:bg-[#3bb43e]">
+                  Track
+                </button>
+              </Link>
+            </div>
           </div>
-
-          <div className="flex-1 mr-[20%]">
-            <ul className="m-3">
-              <li className="mt-3"> Sender Email: {parcel?.senderemail || "N/A"} </li>
-              <li className="mt-3"> Recipient Email: {parcel?.recipientemail || "N/A"} </li>
+  
+          {/* Right Section */}
+          <div className="flex-1">
+            <ul className="space-y-3">
+              <li><strong>Sender Email:</strong> {parcel?.senderemail || "N/A"}</li>
+              <li><strong>Recipient Email:</strong> {parcel?.recipientemail || "N/A"}</li>
             </ul>
-            {/* <button className="bg-[#9fa322] w-[200px] p-[10px] text-white cursor-pointer">
-              Track
-            </button> */}
           </div>
         </div>
       </div>
