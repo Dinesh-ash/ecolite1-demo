@@ -84,11 +84,24 @@ const Parcels = () => {
         </Link>
       </div>
       <DataGrid
-        rows={data}
-        getRowId={(row) => row._id}
-        columns={columns}
-        checkboxSelection
-      />
+  rows={data}
+  getRowId={(row) => row._id}
+  columns={columns}
+  checkboxSelection
+  pageSize={10}
+  rowsPerPageOptions={[10, 20, 50]}
+  sx={{
+    '& .MuiDataGrid-columnHeaders': {
+      backgroundColor: '#1e1e1e',
+      color: '#fff',
+    },
+    '& .MuiDataGrid-row': {
+      '&:nth-of-type(even)': {
+        backgroundColor: '#f5f5f5',
+      },
+    },
+  }}
+/>
     </div>
   );
 };
