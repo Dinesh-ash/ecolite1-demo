@@ -80,38 +80,41 @@ const MyParcels = () => {
           </div>
 
           {parcels.map((parcel, index) => (
-            <Link key={index} to={`/parcel/${parcel._id}`}>
-              <div
-                className="flex justify-between h-[150px] w-[60vw] m-[20px] p-[20px] cursor-pointer"
-                style={{
-                  backgroundColor: "#D9D9D9",
-                  borderRadius: "10px",
-                  color: "#121212",
-                }}
-              >
-                <div>
-                  <ul>
-                    <li>From: {parcel.from}</li>
-                    <li>Weight: {parcel.weight} kg</li>
-                    <li>Date: {parcel.date}</li>
-                    <li>Sender: {parcel.sendername}</li>
-                  </ul>
-                </div>
+  <Link key={index} to={`/parcel/${parcel._id}`}>
+    <div
+      className="flex justify-between h-[150px] w-[60vw] m-[20px] p-[20px] cursor-pointer hover:scale-105 hover:shadow-lg"
+      style={{
+        backgroundColor: "#333", // Darker background
+        borderRadius: "10px",
+        color: "#D9D9D9",
+        border: "1px solid #555",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)", // Subtle shadow for depth
+        transition: "transform 0.2s, box-shadow 0.2s",
+      }}
+    >
+      <div>
+        <ul>
+          <li>From: {parcel.from}</li>
+          <li>Weight: {parcel.weight} kg</li>
+          <li>Date: {parcel.date}</li>
+          <li>Sender: {parcel.sendername}</li>
+        </ul>
+      </div>
 
-                <div className="flex flex-col">
-                  <span>To: {parcel.to}</span>
-                  <button
-                    className={`w-[100px] cursor-pointer padding-[5px] ${
-                      parcel.status === 1
-                        ? "bg-[#cfb526] text-white"
-                        : "bg-[#45de52] text-white"
-                    }`}
-                  >
-                    {parcel.status === 1 ? "Pending" : "Delivered"}
-                  </button>
-                </div>
-              </div>
-            </Link>
+      <div className="flex flex-col">
+        <span>To: {parcel.to}</span>
+        <button
+          className={`w-[100px] cursor-pointer py-[5px] rounded-md ${
+            parcel.status === 1
+              ? "bg-[#cfb526] text-white"
+              : "bg-[#45de52] text-white"
+          }`}
+        >
+          {parcel.status === 1 ? "Pending" : "Delivered"}
+        </button>
+      </div>
+    </div>
+  </Link>
           ))}
         </div>
       </div>
