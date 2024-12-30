@@ -35,9 +35,9 @@ const Tracking = () => {
           color: "#D9D9D9", // Light text for readability
         }}
       >
-        <h2 className="text-3xl font-bold mb-6 text-center text-[#cfb526]">
-          Track Your Parcel
-        </h2>
+        <h2 className="text-3xl font-bold mb-6 text-center" style={{ color: "#800080" }}>
+  Track Your Parcel
+</h2>
   
         {/* Input and Button Section */}
         <div className="flex items-center mb-6">
