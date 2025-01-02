@@ -27,7 +27,7 @@ const Login = () => {
 
   return (
     <div>
-      <div className="h-[80vh] flex items-center justify-between px-[50px] text-gray-300 bg-black">
+      <div className="h-[80vh] flex items-center justify-between px-[50px] text-black bg-black">
         {/* Image and Title Container */}
         <div className="flex flex-col items-start justify-center mr-[30px]">
           <h2 className="text-[#E9EB77] font-semibold text-[35px] mb-[20px] italic">
@@ -50,14 +50,14 @@ const Login = () => {
           <form onSubmit={handleLogin} className="w-full flex flex-col items-center">
             <input
               type="text"
-              className="bg-[#fff] p-[20px] w-[350px] mb-[20px] outline-none rounded-md"
+              className="bg-[#fff] p-[20px] w-[350px] mb-[20px] outline-none rounded-md placeholder-black"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)} // Update email state
             />
             <input
               type="password"
-              className="bg-[#fff] p-[20px] w-[350px] mb-[20px] outline-none rounded-md"
+              className="bg-[#fff] p-[20px] w-[350px] mb-[20px] outline-none rounded-md placeholder-black"
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)} // Update password state
