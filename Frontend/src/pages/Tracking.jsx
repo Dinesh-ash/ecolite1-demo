@@ -46,7 +46,7 @@ const Tracking = () => {
             placeholder="Enter Tracking ID"
             value={trackingId}
             onChange={(e) => setTrackingId(e.target.value)}
-            className="flex-1 px-4 py-2 border border-[#cfb526] rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#cfb526]"
+            className="flex-1 px-4 py-2 border border-[#cfb526] rounded-l-md text-white focus:outline-none focus:ring-2 focus:ring-[#cfb526]"
           />
           <button
             onClick={handleTrack}
