@@ -48,6 +48,7 @@ const Tracking = () => {
             value={trackingId}
             onChange={(e) => setTrackingId(e.target.value)}
             className="flex-1 px-4 py-2 border border-[#cfb526] rounded-l-md text-black focus:outline-none focus:ring-2 focus:ring-[#cfb526]"
+            style={{ color: 'black' }}
           />
           <button
             onClick={handleTrack}
